@@ -1,10 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
 ## This script creates two functions that together allow the retrieval of
 ## previously inverted matrices, and in the event a matrix has not been
 ## run prior it will invert it and save the result.
 
-## Write a short comment describing this function
 ## This script essentially creates a list named of four parts
 ## set contains the matrix
 ## get retrieves the matrix data
@@ -12,7 +9,6 @@
 ## getinvers retrieves the inverted matrix data
 
 makeCacheMatrix <- function(x = matrix()) {
-
     m <- NULL
     set <- function(y) {
         x <<- y
@@ -27,11 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
         setinverse = setinverse,
         getinverse = getinverse
     )
-    
 }
 
-
-## Write a short comment describing this function
 ## This function checks the previously created list to see if
 ## a matrix has been previously inverted and stored. If it has
 ## it returns the cached data with a message. If the matrix has
@@ -41,7 +34,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
     m <- x$getinverse()
-    if (!isnull(m)) {
+    if (!is.null(m)) {
         message("getting cached data")
         return(m)
     }
